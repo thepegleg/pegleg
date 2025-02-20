@@ -19,7 +19,7 @@ if (movid) {
         embed.frameborder = "0";
         embed.width = "800";
         embed.height = "450";
-        embed.src = "player/index.html?video=https://hls.cbass92.org/" + btoa(streamurl) + '.m3u8&subtitle=' + data.subtitles[0].url ;
+        embed.src = "player/index.html?video=" + streamurl + '.m3u8&subtitle=' + data.subtitles[0].url ;
         document.body.appendChild(embed);
       } else {
         console.log("No valid sources found. :(");
