@@ -5,7 +5,7 @@ if (movid) {
   var season = prompt("season?");
   var episode = prompt("episode?");
   fetch(
-    "https://vidapi.cbass92.org/vidsrc/" +
+    "https://vidapi.cbass92.org/embedsu/" +
       movid +
       "?s=" +
       season +
@@ -16,14 +16,14 @@ if (movid) {
     .then((data) => {
       console.log(data);
       const validsources = [];
-      data.sources.forEach((source) => {
+      data.sources[0].files.forEach((source) => {
         console.log(source);
-        if (source.isM3U8) {
+        if (source.type == 'hls') {
           validsources.push(source);
         }
       });
       if (validsources.length > 0) {
-        streamurl = validsources[0].url;
+        streamurl = validsources[0].file;
         const embed = document.createElement("embed");
         embed.frameborder = "0";
         embed.width = "800";
