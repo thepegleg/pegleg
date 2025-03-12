@@ -44,10 +44,6 @@ Create an A record with `104.36.86.105` as the IP
 
 #### other note: I can see what domains you use, and they will be added to the public domain list
 
-### Use a template
-
-Easy way, follow instructions at [ThePlank](https://github.com/sebastian-92/ThePlank/README.md)
-
 ### Custom access point
 
 To make a custom access point, put this html anywhere on your website. the only thing you can't edit is the link, everything else should be fine:
