@@ -13,9 +13,9 @@ thepegleg is a gaming website done differently.
 ## Features
 
 - **Pretty much unblockable:** Easily accessable from many access points.
-- **Games:** ~23,000 games, constantly expanding.
+- **Games:** ~200,000 games, constantly expanding.
 - **Built in proxy:** Ultraviolet proxy is built in (credit to TIW)
-- **Proxy links:** 1000+ Private proxy links, made by us
+- **Proxy links:** 1000+ private proxy links, made by us (in the discord)
 - **Movies & Shows** Movie and TV search and streaming with all your favorites.
 - **Chatgpt:** Unblocked and working AI.
 - **Reddit:** Redlib instance to access reddit
@@ -64,7 +64,7 @@ We are really, really open to contributors. Just make an issue saying what you w
 - Project Lead: [Cbass92]
 - Contributors: [elsgcreate]
 - Game sources: [crazygames](https://crazygames.com), [3kh0](https://3kh0.net), flashpoint, and [myrient](https://myrient.erista.me)
-- Credit to TIW, titanium network, and tf7software for [Ultraviolet static/LupineVault](https://github.com/tf7software/UV-Static)
+- Credit to [TIW](https://github.com/TheTIW), [titanium network](https://titaniumnetwork.org/), and [tf7software](https://github.com/tf7software) for [Ultraviolet static/LupineVault](https://github.com/tf7software/UV-Static)
 - Credit to [avinashranjan](https://avinashranjan.com) for https://github.com/avinashkranjan/HLS_VideoPlayer, used in vids
 - Credit to Inside4ndroid for https://github.com/Inside4ndroid/vidsrc-api-js, used in vid
 - Credit to Rob--W for https://github.com/Rob--W/cors-anywhere, which is used to load games
