@@ -15,11 +15,10 @@ thepegleg is a gaming website done differently.
 - **Pretty much unblockable:** Easily accessable from many access points.
 - **Games:** ~23,000 games, constantly expanding.
 - **Built in proxy:** Ultraviolet proxy is built in (credit to TIW)
-- **Proxy links:** ~1900 proxy links, regularly scraped from discord & skipschool.
+- **Proxy links:** 1000+ Private proxy links, made by us
 - **Movies & Shows** Movie and TV search and streaming with all your favorites.
 - **Chatgpt:** Unblocked and working AI.
-- **Reddit:** teddit instance hosted by us
-- **TikTok:** sticktok, proxied through us
+- **Reddit:** Redlib instance to access reddit
 - **Chat:** Interact with thepegleg discord, on the site
 - **Quick updates:** Ask for whatever, and we will try our best to put it on thepegleg.
 - **Ad free forever:** There should be nothing to distract you from your distractions, ever. If I can remove the ads from something, I will.
@@ -65,11 +64,12 @@ We are really, really open to contributors. Just make an issue saying what you w
 - Project Lead: [Cbass92]
 - Contributors: [elsgcreate]
 - Game sources: Crazygames, 3kh0 assets, 3kh0 relived, 3kh0 lite, armorgames, coolmathgames, stickpage.com, flash in the pan, flashpoint, y8, nettleweb.
-- Credit to TIW and titanium network for [Ultraviolet static
+- Credit to TIW, titanium network, and tf7software for [Ultraviolet static/LupineVault](https://github.com/tf7software/UV-Static)
 - Credit to [avinashranjan](https://avinashranjan.com) for https://github.com/avinashkranjan/HLS_VideoPlayer, used in vids
-- Credit to Inside4ndroid for https://github.com/Inside4ndroid/vidsrc-api-js, used in vids
+- Credit to Inside4ndroid for https://github.com/Inside4ndroid/vidsrc-api-js, used in vid
 - Credit to Rob--W for https://github.com/Rob--W/cors-anywhere, which is used to load games
 - Credit to [teddit](https://codeberg.org/teddit/teddit)
+- Credit to [RedLib](https://github.com/redlib-org/redlib)
 - Credit to [StickTok](https://github.com/PrivacySafe/sticktock)
 
 ## License
