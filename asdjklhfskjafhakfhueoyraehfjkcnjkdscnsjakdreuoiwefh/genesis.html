@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width:100%;height:100%;max-width:100%">
+            <div id="game"></div>
+        </div>
+        <script>
+            let params = new URLSearchParams(window.location.search);
+            let name = params.get("game");
+            if (name) {
+                EJS_player = "#game";
+            EJS_core = 'segaMD';
+            EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+                EJS_gameUrl = "https://cors.cbass92.org/" + name;
+      } else {
+          console.error("No game name specified in the URL.");
+      }
+        </script>
+        <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+    </body>
+</html>
