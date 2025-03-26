@@ -63,11 +63,12 @@ We are really, really open to contributors. Just make an issue saying what you w
 
 - Project Lead: [Cbass92]
 - Contributors: [elsgcreate]
-- Game sources: Crazygames, 3kh0 assets, 3kh0 relived, 3kh0 lite, armorgames, coolmathgames, stickpage.com, flash in the pan, flashpoint, y8, nettleweb.
+- Game sources: [crazygames](https://crazygames.com), [3kh0](https://3kh0.net), flashpoint, and [myrient](https://myrient.erista.me)
 - Credit to TIW, titanium network, and tf7software for [Ultraviolet static/LupineVault](https://github.com/tf7software/UV-Static)
 - Credit to [avinashranjan](https://avinashranjan.com) for https://github.com/avinashkranjan/HLS_VideoPlayer, used in vids
 - Credit to Inside4ndroid for https://github.com/Inside4ndroid/vidsrc-api-js, used in vid
 - Credit to Rob--W for https://github.com/Rob--W/cors-anywhere, which is used to load games
+- Credit to [emulatorjs](https://emulatorjs.org/), also used to load games
 - Credit to [teddit](https://codeberg.org/teddit/teddit)
 - Credit to [RedLib](https://github.com/redlib-org/redlib)
 - Credit to [StickTok](https://github.com/PrivacySafe/sticktock)
