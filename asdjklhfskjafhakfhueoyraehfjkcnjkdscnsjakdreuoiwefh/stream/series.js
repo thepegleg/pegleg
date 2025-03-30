@@ -2,24 +2,12 @@ let params = new URLSearchParams(window.location.search);
 let movid = params.get("id");
 let streamurl;
 if (movid) {
-  var season = prompt("season?");
-  var episode = prompt("episode?");
-  var anime = prompt("is this an anime? y/n")
-  if (anime == 'y') {
     const embed = document.createElement("embed");
     embed.frameborder = "0";
     embed.width = "100%";
     embed.height = "100%";
-    embed.src = `https://vidify.top/ani/${movid}/${season}/${episode}`
+    embed.src = `https://vidora.su/tv/${movid}/${season}/${episode}?autonextepisode=true&autoplay=true&colour=00ff9d&logo=https://cbass92.org/favicon.ico`
     document.body.appendChild(embed);
-  } else {
-    const embed = document.createElement("embed");
-    embed.frameborder = "0";
-    embed.width = "100%";
-    embed.height = "100%";
-    embed.src = `https://vidify.top/embed/tv/${movid}/${season}/${episode}`
-    document.body.appendChild(embed);
-  }
   // fetch(
   //   "https://vidapi.cbass92.org/embedsu/" +
   //     movid +
