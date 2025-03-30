@@ -1,6 +1,8 @@
 let params = new URLSearchParams(window.location.search);
 let movid = params.get("id");
 let streamurl;
+let season = prompt('season number?')
+let episode = prompt('episode number?')
 if (movid) {
     const embed = document.createElement("embed");
     embed.frameborder = "0";
