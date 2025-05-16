@@ -24,7 +24,7 @@ Developed by technonyte0
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UV Static v2</title>
- 
+    <script src="check.js" defer></script>
     <script defer src="scripts/lstimer.js"></script>
 
     <link rel="stylesheet" href="style/global.css" />
@@ -53,6 +53,14 @@ Developed by technonyte0
     <style>
       body {padding: 0;margin: 0;}
     </style>
+    <script>
+      window.onload = function () {
+        if (!localStorage.getItem("discordAlertShown")) {
+          alert("Join our discord .gg/redlv for bonuses, updates, links, and more!");
+          localStorage.setItem("discordAlertShown", "true");
+        }
+      };
+    </script>
   </head>
 
   <body>

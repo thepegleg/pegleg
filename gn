@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5521219086088837" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX5VS54ZDW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-WX5VS54ZDW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gn-math</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        #searchBar {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 800px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #444;
+            color: #fff;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .zone-item {
+            background-color: #444;
+            border: 1px solid #666;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .zone-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .zone-item button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 0 5px 5px;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .zone-item button:hover {
+            background-color: #0056b3;
+        }
+
+        #zoneViewer {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: #222;
+            border: 2px solid #000;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        #zoneViewer iframe {
+            width: 100%;
+            height: 90%;
+            border: none;
+            background-color: #333;
+        }
+
+        #zoneInfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background: #555;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        #zoneTitle {
+            text-align: left;
+        }
+
+        #zoneId {
+            color: #9c9c9c;
+        }
+
+        #zoneAuthor {
+            color: #aaaaaa;
+        }
+
+        #controls {
+            text-align: right;
+        }
+
+        #controls button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        #controls button:hover {
+            background-color: #0056b3;
+        }
+
+        #topControls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        #dataButtons {
+            display: flex;
+            gap: 10px;
+        }
+
+        #dataButtons button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #dataButtons button:hover {
+            background-color: #367C39;
+        }
+
+        #dataButtons input[type="file"] {
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #555;
+            color: #fff;
+        }
+
+        #sortOptions {
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-size: 16px;
+            appearance: none;
+            background-color: white;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23343a40" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right .75rem center;
+            background-size: 8px 10px;
+        }
+
+        #sortOptions:focus {
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+        }
+
+        #darkModeToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+
+        #darkModeToggle:hover {
+            background-color: #0056b3;
+        }
+
+        body:not(.dark-mode) {
+            background-color: #f4f4f4;
+            color: #000;
+        }
+
+        body:not(.dark-mode) h1 {
+            color: #000;
+        }
+
+        body:not(.dark-mode) #searchBar {
+            border-color: #ddd;
+            background-color: #fff;
+            color: #000;
+        }
+
+        body:not(.dark-mode) .zone-item {
+            background-color: white;
+            border-color: #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+
+        body:not(.dark-mode) #zoneViewer {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        body:not(.dark-mode) #zoneViewer iframe {
+            background-color: #fff;
+        }
+
+        body:not(.dark-mode) #zoneInfo {
+            background: #ddd;
+            color: #000;
+        }
+
+        body:not(.dark-mode) #dataButtons input[type="file"] {
+            border-color: #ddd;
+            background-color: #f9f9f9;
+            color: #000;
+        }
+
+        body:not(.dark-mode) #sortOptions {
+            background-color: white;
+            color: #000;
+            border-color: #ddd;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+        }
+
+        .zone-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .zone-count {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-color, #ffffff);
+        }
+
+        #footerButtons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        #footerButtons button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #footerButtons button:hover {
+            background-color: #0056b3;
+        }
+
+        #popupOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #popupContent {
+            background: #222;
+            color: white;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        #popupHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        #popupHeader button {
+            padding: 5px 10px;
+            background-color: #dc3545;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #popupBody {
+            max-height: 400px;
+            overflow-y: auto;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        #download.green-button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        #download.green-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <h1>gn-math</h1>
+    <input type="text" id="searchBar" placeholder="Search zones..." onkeyup="filterZones()">
+    <div id="topControls">
+        <div id="dataButtons">
+            <button onclick="saveData()">Save Data</button>
+            <button onclick="document.getElementById('file').click()">Load Data</button>
+            <input type="file" id="file" style="display:none" onchange="loadData(event)" />
+        </div>
+        <select id="sortOptions" onchange="sortZones()">
+            <option value="name">by Nameㅤ</option>
+            <option value="id">by Idㅤ</option>
+            <option value="popular">by Popularityㅤ</option>
+        </select>
+    </div>
+    <div class="zone-wrapper">
+        <div id="zoneCount" class="zone-count"></div>
+        <div id="container">Loading...</div>
+    </div>
+    <div id="zoneViewer">
+        <div id="zoneInfo">
+            <div id="zoneTitle">
+                <span id="zoneName"></span> <a id="zoneAuthor"></a> <span id="zoneId"></span>
+            </div>
+            <div id="controls">
+                <button onclick="downloadZone()" id="download" class="green-button">Download Local</button>
+                <button onclick="closeZone()">Close</button>
+                <button onclick="fullscreenZone()">Fullscreen</button>
+                <button onclick="aboutBlank()">about:blank (use if embed is broken)</button>
+            </div>
+        </div>
+        <iframe id="zoneFrame"></iframe>
+    </div>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+    <div id="footerButtons">
+        <button onclick="showContact()">Contact</button>
+        <button onclick="loadPrivacy()">Privacy Policy</button>
+    </div>
+    <div id="popupOverlay">
+        <div id="popupContent">
+            <div id="popupHeader">
+                <span id="popupTitle"></span>
+                <button onclick="closePopup()">Close</button>
+            </div>
+            <div id="popupBody" contenteditable="false"></div>
+        </div>
+    </div>
+    <script>
+        const container = document.getElementById('container');
+        const zoneViewer = document.getElementById('zoneViewer');
+        let zoneFrame = document.getElementById('zoneFrame');
+        const searchBar = document.getElementById('searchBar');
+        const sortOptions = document.getElementById('sortOptions');
+        // https://www.jsdelivr.com/tools/purge
+        const zonesURL = "https://cdn.jsdelivr.net/gh/gn-math/assets@latest/zones.json";
+        const coverURL = "https://cdn.jsdelivr.net/gh/gn-math/covers@main";
+        const htmlURL = "https://cdn.jsdelivr.net/gh/gn-math/html@main";
+        let zones = [];
+        let popularityData = {};
+        async function listZones() {
+            try {
+                const response = await fetch(zonesURL+"?t="+Date.now());
+                const json = await response.json();
+                zones = json;
+                await fetchPopularity();
+                sortZones();
+                const search = new URLSearchParams(window.location.search);
+                const id = search.get('id');
+                if (id) {
+                    const zone = zones.find(zone => zone.id + '' == id + '');
+                    if (zone) {
+                        openZone(zone);
+                    }
+                }
+            } catch (error) {
+                container.innerHTML = `Error loading zones: ${error}`;
+            }
+        }
+        async function fetchPopularity() {
+            try {
+                const response = await fetch("https://data.jsdelivr.com/v1/stats/packages/gh/gn-math/html@main/files?period=year");
+                const data = await response.json();
+                data.forEach(file => {
+                    const idMatch = file.name.match(/\/(\d+)\.html$/);
+                    if (idMatch) {
+                        const id = parseInt(idMatch[1]);
+                        popularityData[id] = file.hits.total;
+                    }
+                });
+            } catch (error) {
+                popularityData[0] = 0;
+            }
+        }
+
+        function sortZones() {
+            const sortBy = sortOptions.value;
+            if (sortBy === 'name') {
+                zones.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortBy === 'id') {
+                zones.sort((a, b) => a.id - b.id);
+            } else if (sortBy === 'popular') {
+                zones.sort((a, b) => (popularityData[b.id] || 0) - (popularityData[a.id] || 0));
+            }
+            zones.sort((a, b) => (a.id === -1 ? -1 : b.id === -1 ? 1 : 0));
+            displayZones(zones);
+        }
+
+        function displayZones(zones) {
+            container.innerHTML = "";
+            zones.forEach(file => {
+                const zoneItem = document.createElement("div");
+                zoneItem.className = "zone-item";
+                zoneItem.onclick = () => openZone(file);
+                const img = document.createElement("img");
+                img.src = file.cover.replace("{COVER_URL}", coverURL).replace("{HTML_URL}", htmlURL);
+                zoneItem.appendChild(img);
+                const button = document.createElement("button");
+                button.textContent = file.name;
+                button.onclick = (event) => {
+                    event.stopPropagation();
+                    openZone(file);
+                };
+                zoneItem.appendChild(button);
+                container.appendChild(zoneItem);
+            });
+            if (container.innerHTML === "") {
+                container.innerHTML = "No zones found.";
+            } else {
+                document.getElementById("zoneCount").textContent = `Zones Loaded: ${zones.length}`;
+            }
+        }
+
+        function filterZones() {
+            const query = searchBar.value.toLowerCase();
+            const filteredZones = zones.filter(zone => zone.name.toLowerCase().includes(query));
+            displayZones(filteredZones);
+        }
+
+        function openZone(file) {
+            if (file.url.startsWith("http")) {
+                window.open(file.url, "_blank");
+            } else {
+                const url = file.url.replace("{COVER_URL}", coverURL).replace("{HTML_URL}", htmlURL);
+                fetch(url+"?t="+Date.now()).then(response => response.text()).then(html => {
+                    if (zoneFrame.contentDocument === null) {
+                        zoneFrame = document.createElement("iframe");
+                        zoneFrame.id = "zoneFrame";
+                        zoneViewer.appendChild(zoneFrame);
+                    }
+                    zoneFrame.contentDocument.open();
+                    zoneFrame.contentDocument.write(html);
+                    zoneFrame.contentDocument.close();
+                    document.getElementById('zoneName').textContent = file.name;
+                    document.getElementById('zoneId').textContent = file.id;
+                    document.getElementById('zoneAuthor').textContent = "by " + file.author;
+                    if (file.authorLink) {
+                        document.getElementById('zoneAuthor').href = file.authorLink;
+                    }
+                    zoneViewer.style.display = "block";
+                }).catch(error => alert("Failed to load zone: " + error));
+            }
+        }
+
+        function downloadZone() {
+            let zone = zones.find(zone => zone.id + '' === document.getElementById('zoneId').textContent);
+            fetch(zone.url.replace("{HTML_URL}", htmlURL)+"?t="+Date.now()).then(res => res.text()).then(text => {
+                const blob = new Blob([text], {
+                    type: "text/plain;charset=utf-8"
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = zone.name + ".html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        function aboutBlank() {
+            const newWindow = window.open("about:blank", "_blank");
+            let zone = zones.find(zone => zone.id + '' === document.getElementById('zoneId').textContent).url.replace("{COVER_URL}", coverURL).replace("{HTML_URL}", htmlURL);
+            fetch(zone+"?t="+Date.now()).then(response => response.text()).then(html => {
+                if (newWindow) {
+                    newWindow.document.open();
+                    newWindow.document.write(html);
+                    newWindow.document.close();
+                }
+            })
+        }
+
+        function closeZone() {
+            zoneViewer.style.display = "none";
+            zoneViewer.removeChild(zoneFrame);
+        }
+
+        function fullscreenZone() {
+            if (zoneFrame.requestFullscreen) {
+                zoneFrame.requestFullscreen();
+            } else if (zoneFrame.mozRequestFullScreen) {
+                zoneFrame.mozRequestFullScreen();
+            } else if (zoneFrame.webkitRequestFullscreen) {
+                zoneFrame.webkitRequestFullscreen();
+            } else if (zoneFrame.msRequestFullscreen) {
+                zoneFrame.msRequestFullscreen();
+            }
+        }
+
+        function saveData() {
+            let data = JSON.stringify(localStorage) + "\n\n|\n\n" + document.cookie;
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(new Blob([data], {
+                type: "text/plain"
+            }));
+            link.download = `${Date.now()}.data`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function loadData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const content = e.target.result;
+                const [localStorageData, cookieData] = content.split("\n\n|\n\n");
+                try {
+                    const parsedData = JSON.parse(localStorageData);
+                    for (let key in parsedData) {
+                        localStorage.setItem(key, parsedData[key]);
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+                if (cookieData) {
+                    const cookies = cookieData.split("; ");
+                    cookies.forEach(cookie => {
+                        document.cookie = cookie;
+                    });
+                }
+                alert("Data loaded");
+            };
+            reader.readAsText(file);
+        }
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+        listZones();
+
+        function showContact() {
+            document.getElementById('popupTitle').textContent = "Contact";
+            const popupBody = document.getElementById('popupBody');
+            popupBody.innerHTML = `<p>Discord: https://discord.gg/NAFw4ykZ7n</p>`;
+            popupBody.contentEditable = true;
+            document.getElementById('popupOverlay').style.display = "flex";
+        }
+
+        function loadPrivacy() {
+            fetch('https://cdn.jsdelivr.net/gh/gn-math/gn-math.github.io@main/privacy.txt').then(response => response.text()).then(data => {
+                document.getElementById('popupTitle').textContent = "Privacy Policy";
+                const popupBody = document.getElementById('popupBody');
+                popupBody.textContent = data;
+                popupBody.contentEditable = false;
+                document.getElementById('popupOverlay').style.display = "flex";
+            }).catch(err => {
+                alert("Failed to load privacy policy: " + err);
+            });
+        }
+
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
